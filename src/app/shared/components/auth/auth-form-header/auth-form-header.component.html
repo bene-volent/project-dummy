@@ -1,0 +1,8 @@
+<header>
+    @if (companyName.length > 0){
+        <h2>{{ companyName }}</h2>
+    }
+    @if(linkText.length > 0){
+        <a [routerLink]="linkUrl" class="routeButton is-secondary" role="button">{{ linkText }}</a>
+    }
+</header>

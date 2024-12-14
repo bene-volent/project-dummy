@@ -1,0 +1,63 @@
+<app-auth-form heroHeading="Education Moves Forward">
+  <app-auth-form-header companyName="Company" linkText="Login" linkUrl="/login" />
+  <form class="auth-form" (ngSubmit)="onSubmit()" [formGroup]="form">
+    <h2>Signup</h2>
+
+    <div class="auth-form-field-container" formGroupName="name">
+      <!-- for first name and last name -->
+      <div class="auth-form-field">
+        <label for="fname" class="auth-form-label">First Name*</label>
+        <input type="text" id="fname" name="fname" class="auth-form-input" formControlName="first" />
+      </div>
+      <div class="auth-form-field">
+        <label for="lname" class="auth-form-label">Last Name*</label>
+        <input type="text" id="lname" name="lname" class="auth-form-input" formControlName="last" />
+      </div>
+    </div>
+
+    <div class="auth-form-field">
+      <label for="uname" class="auth-form-label">Username*</label>
+      <input type="text" id="uname" name="username" class="auth-form-input" formControlName="username" />
+    </div>
+
+    <!-- email -->
+
+    <div class="auth-form-field">
+      <label for="email" class="auth-form-label">Email*</label>
+      <input type="email" id="email" name="email" class="auth-form-input" formControlName="email" />
+    </div>
+
+    <div class="auth-form-field-container" formGroupName="passwords">
+      <div class="auth-form-field">
+        <label for="password" class="auth-form-label">Password*</label>
+        <input type="password" id="password" name="password" class="auth-form-input" formControlName="password" />
+        @if( form.controls.passwords.controls.password.value!.length>0 && form.controls.passwords.controls.password.invalid) {
+
+
+        <div class="password-tooltip">
+          <ul>
+
+            <li [class.invalid]="getPasswordErrors()['minLength']">Password must be at least 8 characters long</li>
+            <li [class.invalid]="getPasswordErrors()['maxLength']">Password must be no more than 20 characters long</li>
+            <li [class.invalid]="getPasswordErrors()['lowercase']">Password must contain at least one lowercase letter</li>
+            <li [class.invalid]="getPasswordErrors()['uppercase']">Password must contain at least one uppercase letter</li>
+            <li [class.invalid]="getPasswordErrors()['number']">Password must contain at least one number</li>
+            <li [class.invalid]="getPasswordErrors()['special']">Password must contain at least one special character</li>
+            
+          </ul>
+        </div>
+        }
+      </div>
+      <div class="auth-form-field">
+        <label for="passwordConfirmation" class="auth-form-label">Confirm Password*</label>
+        <input type="password" id="passwordConfirmation" name="passwordConfirmation" class="auth-form-input"
+          formControlName="passwordConfirmation" />
+      </div>
+
+    </div>
+
+    <div class="auth-form-buttons">
+      <button type="submit" class="">Sign Up</button>
+    </div>
+  </form>
+</app-auth-form>

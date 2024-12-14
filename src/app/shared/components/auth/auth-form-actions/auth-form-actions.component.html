@@ -1,0 +1,5 @@
+<div class="auth-form-actions">
+    @for (action of actions; track action.text) {
+    <a [routerLink]="action.link" class="auth-form-link center">{{ action.text }}</a>
+    }
+</div>

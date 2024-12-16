@@ -44,16 +44,29 @@ a {
     cursor: pointer;
 }
 
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
     display: block;
     max-width: 100%;
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
     font: inherit;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     overflow-wrap: break-word;
 }
 
@@ -62,16 +75,23 @@ p {
     margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     text-wrap: balance;
 }
 
-#root, #__next {
+#root,
+#__next {
     isolation: isolate;
 }
 
 /* Button Styles */
-button, a[role='button'].routeButton {
+button:not([mat-button]),
+a[role='button'].routeButton {
     text-decoration: none;
     padding: 1rem 2rem;
     border-radius: 100vh;
@@ -461,3 +481,33 @@ button, a[role='button'].routeButton {
     display: flex;
     gap: 1rem;
 }
+
+
+.sidebar-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+}
+
+
+@media (max-width:768px) {
+    .sidebar-toggle {
+        display: block;
+    }
+
+    .lg-only {
+        display: none;
+    }
+
+    .logout-button {
+        padding: 1rem;
+    }
+}
+
+
+mat-card-content p{
+    margin-block:1em;
+}   

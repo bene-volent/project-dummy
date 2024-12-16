@@ -1,0 +1,121 @@
+:host(.dashboard-sidebar) {
+    grid-area: sidebar;
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    background-color: #5684df;
+    color: #fff;
+    padding: 1rem;
+
+    .sidebar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+
+    h2 {
+        display: none;
+    }
+}
+
+
+
+:host(.dashboard-sidebar) ul {
+    list-style: none;
+    padding: 0;
+}
+
+:host(.dashboard-sidebar) ul li {
+    margin: 1rem 0;
+}
+
+
+@media (min-width: 768px) {
+    :host(.dashboard-sidebar) {
+        position: sticky;
+        top: 0;
+        /* Ensures the sidebar stays at the top of the viewport */
+        height: 100vh;
+
+        /* Add scrolling within the sidebar if content overflows */
+        width: 250px;
+        /* Maintain the sidebar width */
+        background-color: #5684df;
+        /* Keep the background consistent */
+    }
+}
+
+@media (max-width: 768px) {
+    :host(.dashboard-sidebar) {
+        position: fixed;
+        z-index: 5;
+        top: 0;
+        width: 100%;
+        height: 100dvh;
+        overflow: hidden;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+
+        h2 {
+            display: block;
+        }
+    }
+
+    :host(.dashboard-sidebar).active {
+        transform: translateX(0);
+    }
+    
+}
+
+.hover-only {
+    scale: 0;
+    transform-origin: center left;
+    transition: scale 0.200s ease;
+}
+
+.sidebar-item {
+    padding: 0.75rem 1rem;
+    position: relative;
+    display: block;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    z-index: 2;
+
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
+}
+
+.sidebar-item:hover,
+.sidebar-item:has(:focus-visible) {
+    background-color: #3a5ba0;
+}
+
+
+.sidebar-item:hover>.hover-only,
+.sidebar-item:has(:focus-visible)>.hover-only {
+    scale: 100%;
+}
+
+.sidebar-item-details {
+    position: absolute;
+    left: calc(100% + 1rem);
+    width: 100%;
+    background-color: #3a5ba0;
+    z-index: 3;
+    padding: 0.5rem;
+
+    top: 50%;
+    translate: 0 -50%;
+
+    border-radius: 0.6rem;
+}

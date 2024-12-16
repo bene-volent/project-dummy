@@ -1,0 +1,38 @@
+mat-dialog-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.mat-dialog-container {
+    border-radius: 16px; /* Set your desired border radius */
+  }
+
+  .mat-mdc-dialog-surface{
+    border-radius: 2px;;
+  }
+
+mat-dialog-content img {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+mat-dialog-content h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #333;
+}
+
+mat-dialog-content p {
+    margin: 0;
+    font-size: 1rem;
+    color: #666;
+}
+
+mat-dialog-actions {
+    margin-top: 16px;
+}
+
+button[mat-button] {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+}

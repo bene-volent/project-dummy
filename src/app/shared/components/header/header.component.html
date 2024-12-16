@@ -1,0 +1,11 @@
+<h1>Welcome, {{ user()!.firstName }}</h1>
+<button class="sidebar-toggle btn is-neutral" (click)="toggleSidebar()">☰</button>
+<div class="dashboard-header-nav">
+    <nav>
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+    </nav>
+    <button class="btn btn-primary" (click)="logout()">Logout</button>
+</div>
+

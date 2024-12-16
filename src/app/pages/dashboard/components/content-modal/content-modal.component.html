@@ -1,0 +1,15 @@
+
+<h2 mat-dialog-title>{{ data.subject }}</h2>
+<mat-dialog-content class="mat-typography">
+    <img [src]="data.thumbnail" alt="{{ data.subject }} thumbnail" style="width: 100%; height: auto;">
+    <h3>{{ data.topic }}</h3>
+    <p>{{ data.description }}</p>
+    <h3>Details</h3>
+    <p>{{ data.detailedDescription }}</p>
+    <h3>Status</h3>
+    <p>{{ data.isEnrolled ? 'Enrolled' : 'Not Enrolled' }}</p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>OK</button>
+</mat-dialog-actions>
